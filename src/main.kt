@@ -41,27 +41,45 @@ fun main() {
     println("saque em excesso na conta da Fran")
     contaFran.saca(500.0)
     println(contaFran.saldo)
+
+    println("Transferência da conta da Fran para o Alex")
+
+    if(contaFran.transfere(300.0, contaAlex)){
+        println("Transferência sucedida")
+    } else {
+        println("Falha na transferência")
+    }
+
+    println(contaAlex.saldo)
+    println(contaFran.saldo)
 }
-
-
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
 
-    fun deposita(valor: Double){
+    fun deposita(valor: Double) {
         this.saldo += valor
     }
 
-    fun saca(valor: Double){
-        if(saldo >= valor){
+    fun saca(valor: Double) {
+        if (saldo >= valor) {
             saldo -= valor
         }
     }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (saldo >= valor) {
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
+    }
 }
 
-fun testaCopiasEReferencias(){
+fun testaCopiasEReferencias() {
     val numeroX = 10
     var numeroY = numeroX
     numeroY++
@@ -82,9 +100,9 @@ fun testaCopiasEReferencias(){
     println(contaMaria)
 }
 
-fun testaLacos(){
+fun testaLacos() {
     var i = 0
-    while(i < 5){
+    while (i < 5) {
         val titular: String = "Alex $i"
         val numeroConta: Int = 1000 + i
         var saldo = i + 10.0
