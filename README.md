@@ -22,7 +22,7 @@ Neste App são exploradas as seguintes técnicas e tecnologias:
 - **Variáveis mutáveis e imutáveis**: armazenar valores que podem ou não ser modificados
 - **Operações aritméticas**: soma, subtração, multiplicação e divisão
 - **Auto incremento**: adição incremental na mesma variável
-- **Strings e String template**: utilização de texto e contenação de texto com variáveis ou funções
+- **Strings e String template**: utilização de texto e concatenação de texto com variáveis ou funções
 - **Estrutura condicional**: `if` e `when`
 - **Estrutura de repetição ou laços**: `while` e `for` loop
 - **Implementação de classes**: definição de conta
