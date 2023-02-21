@@ -51,9 +51,9 @@ fun main() {
     println(contaAlex.saldo)
     println(contaFran.saldo)
 
-    testaCopiasEReferencias()
-    testaLacos()
-    testaCondicoes(45.55)
+    testarCopiasEReferencias()
+    testarLacos()
+    testarCondicoes(45.55)
 
 }
 
@@ -83,74 +83,5 @@ class Conta(
             return true
         }
         return false
-    }
-}
-
-fun testaCopiasEReferencias() {
-    println("\n*** TESTAR CÓPIAS E REFERÊNCIAS ***")
-
-    val numeroX = 10
-    var numeroY = numeroX
-    numeroY++
-
-    println("numeroX $numeroX")
-    println("numeroY $numeroY")
-
-    val contaJoao = Conta("João", 1002)
-    contaJoao.titular = "João"
-    var contaMaria = Conta("Maria", 1003)
-    contaMaria.titular = "Maria"
-    contaJoao.titular = "João"
-
-    println("titular conta joao: ${contaJoao.titular}")
-    println("titular conta maria: ${contaMaria.titular}")
-
-    println(contaJoao)
-    println(contaMaria)
-}
-
-fun testaLacos() {
-    println("\n*** TESTAR LAÇOS ***")
-
-    var i = 0
-    while (i < 5) {
-        val titular: String = "Alex $i"
-        val numeroConta: Int = 1000 + i
-        var saldo = i + 10.0
-
-        println("titular $titular")
-        println("número da conta $numeroConta")
-        println("saldo da conta $saldo")
-        println()
-        i++
-    }
-
-    for (i in 5 downTo 1) {
-        val titular: String = "Alex $i"
-        val numeroConta: Int = 1000 + i
-        var saldo = i + 10.0
-
-        println("titular $titular")
-        println("número da conta $numeroConta")
-        println("saldo da conta $saldo")
-        println()
-    }
-}
-
-fun testaCondicoes(saldo: Double) {
-    println("\n*** TESTAR CONDIÇÕES ***")
-
-    if (saldo > 0.0) {
-        println("conta é positiva")
-    } else if (saldo == 0.0) {
-        println("conta é neutra")
-    } else {
-        println("conta é negativa")
-    }
-
-    when {
-        saldo > 0.0 -> println("conta é positiva")
-        saldo == 0.0 -> println("conta é neutra")
-        else -> println("conta é negativa")
     }
 }
